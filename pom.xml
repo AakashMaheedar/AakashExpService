@@ -70,6 +70,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>Spring-boot-docker</finalName>
+        <finalName>AakashExp</finalName>
     </build>
 </project>

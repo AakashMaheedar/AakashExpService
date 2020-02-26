@@ -1,9 +1,11 @@
-pipeline{
+pipeline
+{
     agent any
     environment{
         PATH = "/usr/local/Cellar/maven/3.6.3/bin:$PATH"
     }
-    stages{
+    stages
+    {
         stage("Git Checkout"){
             steps{
                git credentialsId: 'Github', url: 'https://github.com/AakashMaheedar/AakashExpService'
@@ -14,5 +16,11 @@ pipeline{
                 sh "mvn clean install"
             }
         }
-        }
+        stage("Docker Build"){
+                    steps{
+                        sh "docker build -f Dockerfile -t aakashexp.jar ."
+
+                    }
+                }
+    }
 }
