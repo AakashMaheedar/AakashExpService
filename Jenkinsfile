@@ -18,7 +18,7 @@ pipeline
         }
         stage("Docker Build"){
                     steps{
-                        sh "docker build -f Dockerfile -t aakashexp.jar ."
+                        sh "docker.build("aakashexp.jar","Dockerfile")"
 
                     }
                 }
